@@ -1,0 +1,30 @@
+﻿@*@using RapPhim2101.Models
+    @model List<GioHangItem>*@
+@model RapPhim2101.Models.GioHangItem
+@{ ViewBag.Title = "Datve";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h1 style="text-align: center; color: #ffd564">Thông tin đặt vé</h1>
+@{ RapPhim2101.Models.DBContext db = new RapPhim2101.Models.DBContext();
+    var phim = db.Phims.ToList();
+    RapPhim2101.Models.Phim p = phim.Find(n => n.MaPhim == Model.MaPhim);
+    var session = (RapPhim2101.Models.KhachHang)Session["TaiKhoan"]; }
+
+<h3>Tên Phim: @p.TenPhim</h3>
+<div class="desc_tickets">
+    <br />
+    <span>Tên Khách hàng:@session.TenKH</span>
+    <br />
+    <span>Suất chiếu: @Model.SuatChieu</span>
+    <br />
+    <span>Phòng chiếu : Cinema @Model.MaPhong</span>
+    <br />
+    <span>Ghế: @Model.Ghe</span>
+    <br /><span>Giá: @Model.SoLuong * 60.000 </span>
+    <br /><span>Thành tiền: @Model.dthanhtien VND</span>
+</div>
+        <div>
+            <a href="/Datve/Trangdatve/@p.MaPhim">Trở lại trang</a> |
+            <a href="@Url.Action("Datve", "Datve", new {@id=Model.MaPhim})">Đặt vé</a>
+        </div>
+
+

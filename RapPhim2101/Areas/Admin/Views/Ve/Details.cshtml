@@ -1,0 +1,35 @@
+﻿@model RapPhim2101.Models.Ve
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ve</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChiTietPhong.MaPhong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiTietPhong.MaPhong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoaiVe.TenLv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoaiVe.TenLv)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaVe }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

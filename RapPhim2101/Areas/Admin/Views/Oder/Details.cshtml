@@ -1,0 +1,75 @@
+﻿@model RapPhim2101.Models.ChiTietHD
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChiTietHD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DichVu.TenDV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DichVu.TenDV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoadon.MaHD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoadon.MaHD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UuDai.HinhThucUD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UuDai.HinhThucUD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ve.MaVe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ve.MaVe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ghe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ghe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayBanVe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayBanVe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

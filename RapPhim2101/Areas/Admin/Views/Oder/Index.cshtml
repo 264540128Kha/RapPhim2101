@@ -1,0 +1,70 @@
+﻿@model IEnumerable<RapPhim2101.Models.ChiTietHD>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DichVu.TenDV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hoadon.MaHD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UuDai.HinhThucUD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ve.MaVe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ghe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayBanVe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DichVu.TenDV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hoadon.MaHD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UuDai.HinhThucUD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ve.MaVe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ghe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayBanVe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
